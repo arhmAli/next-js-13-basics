@@ -59,6 +59,51 @@
 <p>It's as simple as that!</p>
 
 <p>Next.js also allows us to create REST APIs easily. For dynamic routing and data fetching, create a folder with a dynamic route, e.g., <code>[id]</code>, and a <code>route.ts</code> file inside that folder. This file will handle the dynamic routing and data fetching.</p>
+<h1 align="center">Day 05</h1>
+
+<h2>Layout:</h2>
+<p>In Next.js 13, there is a feature called similar layouts that allows us to have consistent styles or content for multiple routes or components. To create a similar layout, we can utilize the <code>layout.tsx</code> file that comes with a new Next.js app. This file contains the <code>RootLayout</code> at the top level. If you want to create a similar layout for multiple components or routes, you can go into that folder and create a <code>layout.tsx</code> file.</p>
+
+<p>Here's an example of the layout code:</p>
+
+<pre><code>localhost:3000/contact
+
+export default function ContactLayout({ children }: { children: React.ReactNode }) {
+  return (
+    &lt;section&gt;
+      &lt;h1&gt;From contact layout&lt;/h1&gt;
+      {children}
+    &lt;/section&gt;
+  );
+}
+</code></pre>
+
+<p>This is how the layout code looks like. You can also add components within the layout. It's important to note that layouts can be nested, such as the contact layout and the root layout.</p>
+
+<h2>Templates:</h2>
+<p>Templates in Next.js are similar to layouts, but with an important distinction: the state and everything inside refreshes when we change routes, essentially causing a rerender. This can be useful in rare cases. To use a template, create a <code>template.tsx</code> file and write the following:</p>
+
+<pre><code>export default function Template({ children }: { children: React.ReactNode }) {
+  return &lt;div&gt;{children}&lt;/div&gt;;
+}
+</code></pre>
+
+<p>This will wrap the layout around the template.</p>
+
+<h2>Basics of Rendering SEO:</h2>
+<p>In Next.js 13, server-side rendering (SSR) is useful for SEO because search bots index websites that are server-rendered. To avoid conflicts and compilation errors, it's a good practice to move client-side features into separate components. Additionally, using a <code>metadata</code> variable with title and description can be helpful for SEO.</p>
+
+<p>Here's an example:</p>
+
+<pre><code>export const metadata = {
+  title: "Home page",
+  description: "This is the homepage for the beverage selling website.",
+};
+</code></pre>
+
+You can use the <code>metadata</code> object to set the title and description of your pages for better SEO optimization.
+</p>
+
 
 <p><strong>NOTE:</strong> Remember that a folder cannot have both a <code>route.ts</code> file and a <code>page.tsx</code> file in the same folder.</p>
 
