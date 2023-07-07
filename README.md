@@ -106,6 +106,36 @@ You can use the <code>metadata</code> object to set the title and description of
 
 
 <p><strong>NOTE:</strong> Remember that a folder cannot have both a <code>route.ts</code> file and a <code>page.tsx</code> file in the same folder.</p>
+<h1 align="center">Day 06</h1>
+
+<h2>Data Fetching:</h2>
+<p>In Next.js 13, data fetching is straightforward as all the components are server-sided, making it easy to use the Fetch API to retrieve data. Additionally, you can make requests through Prisma, Firebase, or other frameworks or services.</p>
+
+<p>Here's a code snippet illustrating the Fetch API:</p>
+
+<pre><code>export default async function fetchData() {
+  const res = await fetch('/api', { cache: "no-store" });
+  const data = await res.json();
+  return data;
+}
+</code></pre>
+
+<p>If you have multiple API calls for the same endpoint in different components, Next.js architecture automatically dedupes the calls, reducing data duplication and simplifying API requests. Next.js also handles caching control automatically when you pass an object with the cache key and property as a value.</p>
+
+<h2>Streaming:</h2>
+<p>There are five steps involved before we see the page:</p>
+
+<ol>
+  <li>Data fetching</li>
+  <li>Rendering HTML on the server (render the server components)</li>
+  <li>HTML goes to the client</li>
+  <li>Non-interactive page is displayed (skeleton)</li>
+  <li>JavaScript is implemented</li>
+</ol>
+
+<p>If data fetching takes a long time or has a significant impact on performance, you may need to modify or display a loading screen. Thankfully, Next.js provides a predefined <code>loading.tsx</code> file that works as a default gateway for loading screens.</p>
+
+<p>You can also import the <code>Suspense</code> component from React and set the fallback as an object to display a loading component. However, Next.js provides a built-in feature for this purpose, so you may not need to use the <code>Suspense</code> component.</p>
 
 </body>
 </html>
