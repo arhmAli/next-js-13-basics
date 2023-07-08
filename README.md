@@ -136,6 +136,32 @@ You can use the <code>metadata</code> object to set the title and description of
 <p>If data fetching takes a long time or has a significant impact on performance, you may need to modify or display a loading screen. Thankfully, Next.js provides a predefined <code>loading.tsx</code> file that works as a default gateway for loading screens.</p>
 
 <p>You can also import the <code>Suspense</code> component from React and set the fallback as an object to display a loading component. However, Next.js provides a built-in feature for this purpose, so you may not need to use the <code>Suspense</code> component.</p>
+<h1 align="center">Day 07</h1>
+
+<h2>Auth.js:</h2>
+<p>Auth.js is a library designed to make authentication easy for developers. To get started, follow these steps:</p>
+
+<ol>
+  <li>Create a folder named <code>api/auth/[...nextauth]</code>.</li>
+  <li>Inside the <code>[...nextauth]</code> folder, create a <code>route.ts</code> file.</li>
+  <li>In the <code>route.ts</code> file, define a <code>handler</code> variable that contains the authentication logic. You can use the <code>NextAuth</code> function with the desired authentication provider(s). For example:</li>
+</ol>
+
+<pre><code>// api/auth/[...nextauth]/route.ts
+
+import { NextAuth } from 'auth.js';
+
+const handler = NextAuth({
+  providers: [
+    GoogleProvider({
+      clientId: 'your-client-id',
+      clientSecret: 'your-client-secret',
+    }),
+  ],
+});
+</code></pre>
+
+<p>After setting up the authentication route, you can create a simple component for practice purposes. Create a provider file that defines an interface with <code>ReactNode</code> as the prop. This <code>Provider</code> component is wrapped with a <code>SessionProvider</code>, and inside it, the <code>props.children</code> are rendered. Finally, wrap the top-level layout with this provider to complete the basic-level authentication.</p>
 
 </body>
 </html>
