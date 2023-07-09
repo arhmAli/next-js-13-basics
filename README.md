@@ -162,6 +162,23 @@ const handler = NextAuth({
 </code></pre>
 
 <p>After setting up the authentication route, you can create a simple component for practice purposes. Create a provider file that defines an interface with <code>ReactNode</code> as the prop. This <code>Provider</code> component is wrapped with a <code>SessionProvider</code>, and inside it, the <code>props.children</code> are rendered. Finally, wrap the top-level layout with this provider to complete the basic-level authentication.</p>
+<h1 align="center">Day 08</h1>
+
+<h2>Prisma:</h2>
+<p>Prisma is a tool that simplifies working with relational databases. It uses an ORM (Object-Relational Mapping) to make database operations easier and more efficient. Prisma supports various database systems like MySQL, PostgreSQL, and even MongoDB.</p>
+
+<p>In a Node.js project, we create a Prisma project and define our schemas using a .prisma file. This file contains the schema definitions for our database tables and their properties.</p>
+
+<p>With Prisma, we can:</p>
+
+<ul>
+  <li>Define schemas for various properties</li>
+  <li>Create specific tables with predefined values</li>
+  <li>Visualize the database structure for better understanding</li>
+  <li>Write concise and readable code</li>
+</ul>
+
+<p>After defining the schemas, we can export them and use them on the client side. Prisma provides autocompletion, making it easier to work with the defined schemas efficiently. Additionally, Prisma offers built-in methods like <code>contains</code>, <code>where</code>, and <code>include</code> to simplify querying and manipulating data.</p>
 
 </body>
 </html>
