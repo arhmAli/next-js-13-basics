@@ -179,6 +179,14 @@ const handler = NextAuth({
 </ul>
 
 <p>After defining the schemas, we can export them and use them on the client side. Prisma provides autocompletion, making it easier to work with the defined schemas efficiently. Additionally, Prisma offers built-in methods like <code>contains</code>, <code>where</code>, and <code>include</code> to simplify querying and manipulating data.</p>
+<h1 align="center">Day 09</h1>
+
+<h2>Revision:</h2>
+<p>Today is dedicated to revising all the topics covered from various resources, including YouTube and other learning materials. It's important to consolidate your understanding and reinforce the concepts learned so far.</p>
+
+<p>One important note to keep in mind is the usage of server components. It's beneficial to use server components as much as possible, as they help reduce the size of the JavaScript bundle, which ultimately improves the performance and SEO of the application. On the other hand, client components should be utilized when there is interactivity involved, such as search bars, buttons, and other interactive elements.</p>
+
+<p><code>module.css</code>: This file is used to extract specific classes from a CSS file. For example, if you have a component and a corresponding CSS file, you can call the button styles using <code>${button.red}</code>. This way, the styling won't interfere with other buttons or elements. It's especially useful when you have multiple buttons or elements and need to apply specific styles to each of them.</p>
 
 </body>
 </html>
